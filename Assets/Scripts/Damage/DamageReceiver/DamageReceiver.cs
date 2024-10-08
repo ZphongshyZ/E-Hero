@@ -13,6 +13,9 @@ public abstract class DamageReceiver : MyMonobehaviour
     [SerializeField] protected bool isImmortal = false;
     public bool IsImortal { get => isImmortal; set => isImmortal = value; }
 
+    [SerializeField] protected bool isTakenDamage = false;
+    public bool IsTakenDamage { get => isTakenDamage; set => isTakenDamage = value; }
+
     //DamageReceive System
     protected override void OnEnable()
     {

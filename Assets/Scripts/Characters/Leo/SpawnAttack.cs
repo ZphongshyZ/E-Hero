@@ -9,22 +9,22 @@ public class SpawnAttack : MyMonobehaviour
 
     private void Update()
     {
-        this.SetPos();
+        this.SetPosGround();
     }
 
-    protected float GetDistance()
+    protected float GetDistanceGround()
     {
         // Vị trí hiện tại của đối tượng
         Vector2 position = this.transform.position;
 
         // Phóng tia ray xuống dưới theo trục y (Vector2.down)
-        RaycastHit2D hit = Physics2D.Raycast(position, Vector2.down, this.distance, this.ground);
+        RaycastHit2D hitGround = Physics2D.Raycast(position, Vector2.down, this.distance, this.ground);
 
         // Kiểm tra xem tia ray có chạm vào "Ground" không
-        if (hit.collider != null)
+        if (hitGround.collider != null)
         {
             // Tính khoảng cách từ đối tượng đến tilemap "Ground"
-            return hit.distance;
+            return hitGround.distance;
         }
         else
         {
@@ -32,12 +32,12 @@ public class SpawnAttack : MyMonobehaviour
         }
     }
 
-    protected void SetPos()
+    protected void SetPosGround()
     {
-        float dis = GetDistance();
-        if (Mathf.Abs(dis - 5.5f) > 0.01f)
+        float disGround = GetDistanceGround();
+        if (Mathf.Abs(disGround - 5.5f) > 0.01f)
         {
-            float adjustment = dis - 5.5f;
+            float adjustment = disGround - 5.5f;
             this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - adjustment);
         }
     }

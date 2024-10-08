@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d33cb3933c88849958cbe6fd77d32f, type: 3}
   m_Name: DarkWizard
   m_EditorClassIdentifier: 
-  nameCharacter: Character
+  nameCharacter: DarkWizard
   hpMax: 100
   isImmortal: 0
-  speed: 5
+  speed: 10
   jumpPower: 10
   rollPower: 15
   dame: 1

@@ -77,7 +77,7 @@ public class PlayerMovement : MyMonobehaviour
     protected void Move()
     {
         if (this.isRolling) return;
-        if (this.character.IsAttacking || this.damageReceiver._IsDead)
+        if (this.character.IsAttacking || this.damageReceiver._IsDead || this.damageReceiver.IsTakenDamage)
         {
             this.rb.velocity = Vector2.zero;
             return;
